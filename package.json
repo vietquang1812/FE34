@@ -1,0 +1,19 @@
+{
+  "name": "fe34",
+  "version": "1.0.0",
+  "description": "https://www.dropbox.com/s/pf503siu7yabzz7/Slides-20220801T045445Z-001.zip?dl=0 # Figma https://www.figma.com/file/GjLwXlZ3pm7xqi8u51FoeB/Basic?node-id=2%3A36&t=9rOmF5qVWkYiuFk4-1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-vq:vietquang1812/FE34.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
