@@ -1,0 +1,103 @@
+main{
+    clear: both;
+   
+}
+body {
+    width: 1000px;
+    margin: 0 auto;
+}
+.section-1{
+    margin-top: 100px;
+    border: 2px solid black;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    box-shadow: 5px 8px 5px 8px #888888;
+    border-radius: 10px 10px 10px 10px ;
+}
+aside {
+    width: 500px;
+    float: right;
+    height: auto;
+    padding-right: 134px;
+}
+
+
+img{
+    padding-left: 10px;
+    width: 269px;
+    height: 332px;
+    
+}
+.title-java{
+    color: #2770DC;
+    font-family: Poppins;
+    Font-size: 46px;
+    text-align: center;
+}
+.paragraph { 
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-family: popins;
+    font-style: regular;
+    font-size: 25px;
+}   
+header{
+    text-align: center;
+    padding-left: 34.4px;
+    padding-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Poppins';
+    padding-top: 135px;
+    font-weight: 700;
+    font-size: 78px;
+    line-height: 120%;
+    text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.75);;
+    color: #001B4B;
+}
+.content{
+    border-left: 5px solid black;
+    padding-left: 30px;
+    font-family: 'Sora', sans-serif;
+    height: 25px;
+    width: 503px;
+ 
+}
+.title-1{
+    width: 978px;
+    height: 95px;
+    font-family: Sora;
+    
+
+}
+.title-2{
+    width: 988px;
+    height: 188px;
+    font-family: Sora;
+}
+.title-3{
+    width: 1002px;
+    height: 144px;
+    font-family: Sora;
+}
+
+footer{
+    text-align: center;
+    margin-top: 50px;
+    clear: both;
+}
+.btn-primary{
+    clear: both;
+    width: 100%;
+    max-width: 217px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 0 10px rgba(255, 152, 1, .5);
+    margin: 100px auto 200px;
+    font-weight: 700;
+    padding: 17px 20px;
+    background-image: linear-gradient(to right,#FF9700,#FFC92C);
+}
