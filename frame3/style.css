@@ -1,0 +1,134 @@
+
+main{
+    
+    margin-top: 100px;
+    border: 0 solid;
+    margin-left: 100px;
+    padding-left: 31px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    width: 993px;
+    height: 1200px;
+    
+}
+
+body{
+    background-image: linear-gradient(to bottom,#FFFFFF, #FACD8A);
+    width: 1360px;
+    height: 1344px;
+    margin: auto;
+}
+
+img{
+    margin-top: -26px;
+    
+    padding-top: 32px;
+    
+}
+.heading{
+    display: flex;
+    align-items: flex-start; 
+} 
+
+.title-header{
+    padding-left: 20px;
+    color: #F2972E ;
+    text-shadow:0 8px 8px  rgb(0, 0, 0, 0.25) ;
+    vertical-align: top;
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+    text-align: left;
+    
+}
+
+.title-header2{
+    font-family: 'Sora', sans-serif;
+    text-shadow:0 8px 8px  rgb(0, 0, 0, 0.25) ;
+    font-size: 20px;
+}
+
+.para{
+    padding-left: 20px;
+    color: #F2972E ;
+    text-shadow:0 8px 8px  rgb(0, 0, 0, 0.25) ; 
+}
+
+.line{
+    color: rgba(0,0,0,.1);
+    margin-top: 27px;
+    border: 2px solid #F2972E;
+    padding-right: 20px;
+   margin-left: -32px;
+   height: 0;
+   
+}
+.title-content{
+    font-family: 'Sora', sans-serif;
+    font-size: 30px;
+}
+.img-para{
+    
+    clear: both;
+}
+.box{
+    float: right;
+    width: 286px;
+    height: 370px;
+    background-color: #FFEBC6;
+    margin-right: 27px;
+    padding-left: 20px;
+}
+
+.text-box{
+    font-size: 19px;
+    font-family: 'Sora', sans-serif; 
+}
+
+.cl-red{
+    color: #931420;
+    text-decoration: underline;
+}
+ul{
+    font-size: 18px;
+}
+h3{
+    font-size: 19px;
+    border-right: 5px;
+    font-family: 'Sora', sans-serif; 
+    color: #931420;
+    text-decoration: underline;
+}
+ .section-1{
+    float: left;
+} 
+ .text-section{
+    width: 290px;
+    height: 400px;
+    font-size: 18px;
+    font-family: 'Sora', sans-serif; 
+}
+    
+
+.section-2{
+  
+    padding-left: 348px;
+    width: 300px;
+    height: 850px;
+}
+.text-section2{
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+
+}
+.line-footer{
+    color:#F2972E;
+    border: 2px solid;
+    margin-right: -62px;
+}
+footer{
+
+    margin-top: -81px;
+    text-align: right;
+    margin-right: 298px;
+    padding-left: 100px;
+}
