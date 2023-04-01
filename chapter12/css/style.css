@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+thead {
+    background-color: black;
+}
+
+th, td, tr {
+    border: 1px solid;
+    padding: 5px 10px;
+    text-align: center;
+}
+th {
+    color: #fff;
+    border-color: rgba(255,255,255, .5);
+}
+tr:nth-child(2n) {
+    background-color: rgba(0,0,0,.2);
+}
+tbody tr:first-child td:not(.no-color) {
+    background-color: yellowgreen;
+}
+.cl-blue {
+    color: blue;
+}

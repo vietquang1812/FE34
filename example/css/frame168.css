@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-title {
+    font-size: 28px;
+    line-height: 64px;
+    font-weight: 700;
+    text-align: center;
+}
+/* .teams {
+    display: grid;
+    grid-gap: 60px;
+    text-align: center;
+    margin-top: 55px;
+    padding: 0 90px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.team-image {
+    display: block;
+    max-width: 100%;
+}
+.team-name {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.team-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+} */
+
+.teams {
+    display: flex;
+    padding: 0 90px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.team-item {
+    width: calc(25% - 25px);
+    padding: 0 10px;
+    margin-top: 55px;
+}
+.team-image {
+    display: block;
+    max-width: 100%;
+}
+.team-name {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.team-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+}
