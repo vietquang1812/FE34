@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE34 | Chapter 13: Forms</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form action="./index.html" target="_blank" method="get">
+        <input type="text" name="fullname" placeholder="Your Full Name" value="Nguyen Van B" maxlength="50" required>
+        <br>
+        <input type="email" name="email" placeholder="Your Email">
+        <br>
+        <input type="password" name="password">
+        <br>
+        <input type="number" name="number" step=".1" min="10" max="20">
+        <br>
+        Hidden: <input type="hidden" name="phone" value="123456789">
+        <br>
+        <label>
+            <input type="radio" name="project" value="HTML5&CSS3">HTML5&CSS3<br>
+        </label>
+        <label>
+            <input type="radio" name="project" value="Javascript" id="javascript" checked>Javascript<br>
+
+        </label>
+        <label>
+            <input type="radio" name="project" value="ReactJs">ReactJs<br>
+
+        </label>
+        <br>
+        <input type="radio" name="team" value="Team 1">Team 1<br>
+        <input type="radio" name="team" value="Team 2">Team 2<br>
+        <input type="radio" name="team" value="Team 3" checked>Team 3<br>
+
+        <br>
+        <input type="checkbox" name="project" value="HTML5&CSS3" checked>HTML5&CSS3<br>
+        <input type="checkbox" name="project" value="Javascript" checked>Javascript<br>
+        <input type="checkbox" name="project" value="ReactJs">ReactJs<br>
+        <br>
+        <input type="checkbox" name="team" value="Team 1">Team 1<br>
+        <input type="checkbox" name="team" value="Team 2">Team 2<br>
+        <input type="checkbox" name="team" value="Team 3" checked>Team 3<br>
+        
+        <label for="javascript">Javascript Radio</label>
+
+        <br>
+        <br>
+
+        <select name="country" id=""  style="width:200px" >
+            <option value="" selected hidden>---Select Country---</option>
+            <optgroup label="Chau A">
+                <option value="vn">viet nam</option>
+                <option value="thailan">Thai Lan</option>
+                <option value="lao">Lao</option>    
+            </optgroup>
+            
+            <optgroup label="Chau Au">
+                <option value="anh">Anh</option>
+            <option value="phap">Phap</option>
+            <option value="y" >Y</option>
+            </optgroup>
+            
+
+        </select>
+        <button>submit</button>
+        <div class="vh"></div>
+
+    </form>
+
+</body>
+
+</html>
