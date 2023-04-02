@@ -1,0 +1,327 @@
+  
+body{
+    background: linear-gradient(180deg, #FFFFFF 0%, #FACD8A 100%);
+}
+.web{
+    max-width: 993px;
+    margin: 0 auto;
+    background: #F4EEE4;
+}
+.header__title{
+    display: flex;
+    margin: 0 auto;
+    max-width: 100%;
+    background: linear-gradient(88.88deg, #F2BB2E 0%, #FFFFFF 41.15%, #FFFFFF 53.13%, #F2BB2E 100%);
+}
+img{
+    width: 10%;
+    margin: 30px 35px;
+}
+h1{
+    margin-top: 15px;
+    margin-bottom: 0;
+    width: 100%;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+    font-size: 35px;
+    line-height: 50px;
+    color: #F2972E;
+    text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+}
+h2{
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+nav{
+    width: 992px;
+    height: 64px;
+    margin: 0 auto;
+}
+.menu{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.menu li {
+    width: 197px;
+    border-left: 2px solid #FFFFFF ;
+    background: #F2972E;
+}
+.menu li:first-child{
+    border-left: none;
+}
+.menu li a {
+    color: #FFFFFF;
+    display: block;
+    padding: 20px 0px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+.menu li:hover a {
+    color: red;
+}
+.menu ul.menu2{
+    position: absolute;
+    padding: 0;
+    list-style: none;
+    display: none;
+}
+.menu ul.menu2 li{
+    border-left:0;
+    border-top: 1px solid #FFFFFF;
+}
+.menu li:hover .menu2 {
+    display: block;
+}
+.menu .menu2 li:hover a{
+    color: #FFFFFF;
+}
+section{
+    width: 873px;
+    margin: 0 auto;
+}
+.section1{
+    margin-top: 60px;
+    margin-bottom: 45px;
+}
+.section2{
+    margin-top: 45px;
+}
+.section3{
+    margin-top:30px;
+}
+h3{
+    margin: 0;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+
+}
+h4{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin: 0;
+}
+p{
+    margin: 0;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+.line1{
+    width: 869px;
+    height: 0px;
+    border: 2px solid #F2972E;
+    transform: rotate(0.07deg);
+}
+.section2__content{
+    display: flex;
+}
+.section2__img{
+    width: 354px;
+    margin: 0;
+}
+.section__liss{
+    display: flex;
+    padding: 0;
+} 
+.line2{
+    width: 991px;
+    margin-top: 30px;
+    height: 0px;
+    border: 2px solid #F2972E;
+}
+li{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 30px;
+    color: #000000;
+
+}
+footer{
+    width: 994px;
+    height: 101px;
+    left: 183px;
+    top: 1764px;
+    text-align: center;
+    background: #F2972E;
+    margin-bottom: 40px;
+    }
+.footer__content{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 32px;
+    /* identical to box height, or 229% */
+    padding-top: 40px;
+    color: #FFFFFF;
+}
+@media only screen and (max-width:375px)
+{
+    body{
+        background:none;
+        margin: 0 auto;
+    }
+    .web{
+        width: 375px;
+        background-color:white;
+    }
+    .header__title{
+        width: 100%;
+    }
+    img{
+        width: 9%px;
+        margin: 38px 11px;
+    }
+    h1{
+        margin-top: 35px;
+        margin-bottom: 0;
+        width: 100%;
+        font-family: 'Sora';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;    
+        color: #F2972E;
+        text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+        
+    }
+    h2{
+        margin: 0;
+        width: 100%;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-family: 'Sora';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 40p;  
+        color: #000000;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    nav{
+        display: none;
+    }
+    section{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .section1{
+        width: 100%;
+        margin: 32px 24px;
+    }
+    .section2{
+        width: 100%;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .section3{
+        width: 100%;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    h3{
+        font-family: 'Sora';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 40px;
+        color: #000000;
+    
+    }
+    h4{
+        max-width: 86%;
+        font-family: 'Sora';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        text-align:left;
+        line-height: 24px;
+        color: #000000;
+    }
+    .content3{
+        display: none;
+    }
+    .line1{
+        width: 86%;
+        height: 0px;
+        left: 24px;
+        right: 24px;
+        border: 2px solid #F2972E;
+        }
+    .section2__content{
+        flex-direction: column-reverse;
+        }
+    .section2__img{
+        width: 323px;
+    }
+    .line2{
+        width: 86%;
+        height: 0px;
+        border: 2px solid #F2972E;
+        margin-top: 75px;
+        margin-bottom: 54px;
+       margin-left: 24px;
+    }
+    .section__liss{
+        flex-direction: column;
+    }
+    ul{
+        width: 86%;
+        padding: 0;
+        margin-left: 30px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    li{
+        font-family: 'Sora';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+    }
+    footer{
+        width: 375px;
+        background: #F2972E;
+        margin-bottom: 0;
+        }
+    .footer__content{
+        font-family: 'Sora';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 32px;
+        color: #FFFFFF;
+
+    }
+
+}
