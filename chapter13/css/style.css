@@ -82,3 +82,14 @@ textarea {
 .text-center {
     text-align: center;
 }
+[required] {
+    border-color: rgb(6, 156, 179);
+}
+.form_item_input:invalid {
+    border-color: red;
+    border-width: 2px;
+}
+.form_item_input:valid {
+    border-color: green;
+    border-width: 2px;
+}

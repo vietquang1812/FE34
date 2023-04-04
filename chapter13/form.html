@@ -15,7 +15,23 @@
         </div>
         <div class="form_item">
             <label for="last-name"  class="form_item_label">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" class="form_item_input">
+            <input type="text" id="last-name" name="last-name" class="form_item_input" >
+        </div>
+        <div class="form_item">
+            <label for="email" class="form_item_label">Email:</label>
+            <input type="email"  id="email" name="email" class="form_item_input">
+        </div>
+        <div class="form_item">
+            <label for="date" class="form_item_label">date:</label>
+            <input type="date"  id="date" name="date1" class="form_item_input" list="lisks">
+        </div>
+        <div class="form_item">
+            <label for="phone" class="form_item_label">Phone:</label>
+            <input type="text" pattern="09\d{8}" title="Please Enter Phone number, example 09xxxxxxxx" id="phone" name="phone" class="form_item_input">
+        </div>
+        <div class="form_item">
+            <label for="password" class="form_item_label">Password:</label>
+            <input type="text" pattern="[a-zA-Z0-9\!\@]{6,}" title="Please Enter password" required id="password" name="password" class="form_item_input">
         </div>
         <div class="form_item">
             <label for="address" class="form_item_label">Address:</label>
@@ -37,7 +53,11 @@
             </div>
         </div>
     </form>
-
+    <datalist id="links">
+        <option value="https://google.com" label="Google">
+        <option value="https://bing.com" label="Bing">
+        <option value="https://yahoo.com" label="Yahoo">
+    </datalist>
     <form action="" method="post" class="form form-flex">
         <label for="" class="form_item_label">First Name:</label>
         <input type="text" class="form_item_input" >
