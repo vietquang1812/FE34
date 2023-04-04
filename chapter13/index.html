@@ -46,7 +46,6 @@
         <input type="checkbox" name="team" value="Team 2">Team 2<br>
         <input type="checkbox" name="team" value="Team 3" checked>Team 3<br>
         
-        <label for="javascript">Javascript Radio</label>
 
         <br>
         <br>
@@ -67,11 +66,29 @@
             
 
         </select>
+        <br>
+        <br>
+        <input type="file" name="file" multiple accept="image/png,image/jpg,image/jpeg">
+        <br>
+        <br>
+        <input type="color">
+        <input type="submit" value="Submit">
+        <button type="reset">Reset</button>
+        <br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+        <progress max="100" value="20" id="progress"></progress>
         <button>submit</button>
         <div class="vh"></div>
 
     </form>
 
+    <script type="text/javascript">
+        setInterval(function() {
+            var pro = document.getElementById('progress').value
+            document.getElementById('progress').value = (parseInt(pro)+1)%101
+        }, 100)
+    </script>
 </body>
 
 </html>
