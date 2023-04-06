@@ -1,0 +1,104 @@
+* {
+   box-sizing: border-box;
+   font-family: 'Sora';
+}
+
+body {
+   max-width: 1440px;
+   margin: 100px auto;
+}
+.vh {
+   height: 100vh;
+}
+textarea {
+   width: 100%;
+}
+
+.content {
+   width: 455px;
+}
+
+.banner {
+   position: relative;
+}
+
+img {
+   max-width: 100%;
+}
+
+.item {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   background: rgba(255, 255, 255, 0.9);
+   width: 1200px;
+   height: 784px;
+}
+.title {
+   font-size: 32px;
+   font-weight: 700;
+   line-height: 42px;
+   letter-spacing: 0em;
+   text-align: left;
+}
+
+.form_item_label {
+   text-align: left;
+   font-weight: 700;
+   color: rgba(0, 0, 0, 1);
+   font-size: 16px;
+   margin-top: 44px;
+}
+.form_item_input {
+   padding: 5px 20px;
+   border-radius: 5px;
+   border-color: #555;
+   border-width: 1px;
+}
+.form_item-btns {
+   text-align: center;
+}
+.btn {
+   padding: 5px 20px;
+   margin: 0;
+   box-shadow: 4px 4px 4px rgba(0, 0,0, .24);
+   border-radius: 8px;
+   color: #fff;
+   border-width: 1px;
+}
+.btn-submit {
+   border-color: rgba(81, 182, 255, 1);
+
+   background-color: rgba(81, 182, 255, 1);
+}
+.btn-reset {
+   background-color: #838282;
+}
+
+.form-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 10px;
+}
+.text-letf {
+   text-align: left;
+   margin-top: 30px;
+}
+.decoration {
+   color: rgba(46, 156, 218, 1) ;
+}
+
+.item {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 75px 78px 123px 95px;
+   border: 1px solid rgba(255, 255, 255, 0.9);
+   border-radius: 20px;
+}
+ .line {
+   background: rgba(0, 0, 0, 1);
+   margin: 0 45px;
+
+ }
+
