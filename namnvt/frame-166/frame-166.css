@@ -8,9 +8,10 @@
 }
 .banner-img{
     max-width: 1492px;
-    max-height: 1045px;
-    object-fit: cover;
-    
+    /* max-height: 1045px; */
+    background-image: url(picture/banner.png);
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 .register--login{
     width: 1200px;
