@@ -6,14 +6,15 @@
     line-height: 24px;
     color: rgba(85, 85, 85, 0.7);
 }
-.banner-img{
+body{
     max-width: 1492px;
-    max-height: 1045px;
-    object-fit: cover;
-    
+    /* max-height: 1045px; */
+    background-image: url(picture/banner.png);
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 .register--login{
-    width: 1200px;
+    width: 80%;
     display: block; 
     padding: 75px 20px;
     position: absolute;
@@ -31,15 +32,15 @@
 .form-display{
     display: flex;
     flex-flow: column;
-    width: 50%;
+    width: 45%;
 }
 .register--login >.form-display{
-    padding:0 40px;
+    /* padding:0 40px; */
 }
 .form-display>.form-display:not(:first-child){
     padding-top: 44px;}
 .form-display>.form-display input{
-    width:455px;
+    width:200%;
     height: 55px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -92,88 +93,24 @@ button{
     background: #B7BDC1;
     padding: 0;
 }
-@media only screen and (max-width:1024px){
-    .register--login{
-        width: 700px;
-        padding:20px 20px
-    }
-   
-    .form-display>.form-display input{
-        width:250px;
-        height: 45px;}
-    .form-display>.form-display:not(:first-child){
-        padding-top: 20px;}
-    .bts{
-        padding-top: 15px;
-        }
-    .email label, .pass label, .re_pass label{
-        padding-bottom:10px;
-        
-    }
-    .title{
-        font-size: 25px;
-        line-height: 32px;
-    }
-    .check-box{
-        padding-top:15px;}
-
-    button{ 
-        width: 90px;
-        height: 42px;}       
-}
-/* @media only screen and (max-width:800px){
-    *{
-        font-size: 14px;
-    }
-    .register--login{
-        width: 700px;
-        padding:40px 20px
-    }
-   
-    .form-display>.form-display input{
-        width:250px;
-        height: 45px;}
-    .form-display>.form-display:not(:first-child){
-        padding-top: 20px;}
-    .bts{
-        padding-top: 20px;
-        }
-    .email label, .pass label, .re_pass label{
-        padding-bottom:6px;
-        
-    }
-    .title{
-        font-size: 20px;
-        line-height: 25px;
-    }
-    .check-box{
-        padding-top:15px;}
-
-    button{ 
-        width: 80px;
-        height: 35px;}       
-} */
-
 @media only screen and (max-width:767px){
     .register--login{
-        width: 400px;
         flex-flow: column;
-        padding: 20px 10px;
         
     }
-    .register--login >.form-display{
-        padding:0 20px;}
-    .form-display:first-child{
-        padding-bottom: 10px;}
     .form-display{
-        width: 300px;}
+        width: 100%;
+    }
     .form-display>.form-display input{
-        width:250px;}
+        width:90%;}
     
     .form-display:first-child{
+        padding-bottom: 40px;
         border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 1);
         }
+    .form-display:not(:first-child){
+        padding-top: 40px;}
     .title{
         font-size: 20px;
         line-height: 25px;
@@ -181,8 +118,8 @@ button{
     .check-box{
         padding-top:10px;}
     button{ 
-        width: 70px;
-        height: 22px;}       
+        width: 90px;
+        height: 35px;}       
     
     .form-display>.form-display:not(:first-child) {
         padding-top: 10px;}
@@ -190,7 +127,7 @@ button{
         padding-top: 10px;
         }
 }
-@media only screen and (max-width:425px){
+/* @media only screen and (max-width:425px){
     *{font-size: 12px;}
     .register--login{
         width: 320px;
@@ -227,4 +164,4 @@ button{
             width: 200px;
             height: 20px;
         }
-    }
+    } */
