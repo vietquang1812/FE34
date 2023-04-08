@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora';
+    font-style: normal;
+}
+.web{
+    width: 1492px;
+    position: relative;
+}
+img{
+    max-width:100%;
+    display: block;
+}
+.form{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding:80px 65px 70px;
+    transform: translate(-50%, -50%);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 75px 80px;
+
+}
+
+.form-title{
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+    color: #000000;
+}
+.label-text{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+span{
+    color:#2E9CDA;
+}
+.checkbox-text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+input{
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 15px 394px 15px 15px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    }
+.btn{
+    width: 115px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    border-color:wheat;
+    background: #51B6FF;
+    padding: 15px 30px;
+    color: #FFFFFF;
+}
+.btn-login{
+    margin-top: 40px;
+}
+.btn-cancel{
+    margin-left: 18px;
+    background: #B7BDC1;;
+}
+.line{
+    display: block;
+    width: 0;
+    max-height: 100%;
+    border: 1px solid black;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    margin-left: 40px;
+    margin-right: 60px;
+}
+#vehicle1{
+    margin: 0;
+}
+.re-password{
+    margin-bottom: 0;
+}
