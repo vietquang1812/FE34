@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+}
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+}
+.img{
+    max-width: 100%;
+    display: block;
+}
+.boder-box{
+    border-right: solid 2px black;
+    position: absolute;
+    padding: 290px 0px;
+    top: 13%;
+    right: 50%;
+}
+
+.form {
+    border-radius: 3%;
+    width: 1200px;
+    height: 784px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0px auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:80px 65px 70px;
+
+}
+
+
+
+
+.title-one{
+    position: absolute;
+    top: 9%;
+    left: 25%;
+    
+   
+}
+.title-two{
+    position: absolute;
+    top: 9%;
+    left: 57%;
+}
+
+.form-action {
+    position: absolute;
+    top: 20%;
+    left: 6%;
+}   
+
+.form-group {
+
+    top: 68%;
+    left: 25%;
+    width: 100%;
+
+
+}
+.form-text {
+    position: absolute;
+    top: 20%;
+    left: 56%;
+}
+
+.form-group1 {
+
+    
+    width: 100%;
+
+}
+
+.form-group2 {
+
+    top: 83%;
+    left: 25%;
+    width: 100%;
+}
+
+.checkbox {
+
+    top: 90%;
+    left: 25%;
+    width: 100%;
+    margin-top: 10px;
+}
+.checkbox-tick{
+   margin-top: 17px;
+}
+
+
+
+.input-form {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 455px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    padding: 15px 331px 15px 15px;
+
+}
+.input-form-one {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 455px;
+    border-radius: 8px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    padding: 15px 331px 15px 15px;
+
+}
+
+.name {
+
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: -7px;
+    margin-top: 10px;
+
+}
+
+
+.checkbox-color {
+    color: #2E9CDA;
+}
+.submit {
+    margin-top: 35px;
+    border-radius: 8px;
+    
+
+}
+
+.submit-form {
+    background-color: #51B6FF;
+    padding: 12px 30px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    
+}
+
+
+.submit-form-one {
+    background-color: #B7BDC1;
+    padding: 12px 30px;
+    border-radius: 8px;
+    color: white;
+   
+    
+   
+}
+
+.checkbox-one {
+
+    top: 90%;
+    left: 25%;
+    width: 100%;
+    margin-top: 10px;
+}
+.checkbox-form{
+    margin: -20px 24px;
+}
+
