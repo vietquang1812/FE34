@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    position: relative;
+    background: url(acsett/anh1.png) no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.content {
+    max-width: 1200px;
+    width: 100%;
+    max-height: 784px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding: 75px 0 82px 0;
+    display: flex;
+}
+
+.form-wrap+.form-wrap {
+    border-left: 2px solid #000000;
+}
+
+.content .form-wrap {
+    width: 50%;
+    padding: 0 66px;
+}
+
+.content .form-wrap .siuu .cas {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.form {}
+
+.form-group {
+    max-width: 455px;
+    width: 100%;
+}
+
+.form-group+.form-group {
+    margin-top: 41px;
+
+}
+
+.form-group .form-label {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    display: block;
+}
+
+.form-group .form-control {
+    height: 55px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 15px 17px 16px;
+}
+
+.form-group .form-control::-moz-placeholder {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(85, 85, 85, 0.7);
+}
+
+.check {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin-top: 28px;
+}
+a{
+    color: #51B6FF;
+}
+
+.button {
+    
+    position: relative;
+    display: flex;
+
+
+
+}
+
+.button .btn1 .input {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    outline: none;
+
+}
+
+input[type="submit"] {
+    border: none;
+    width: 115px;
+    height: 52px;
+    background: #51B6FF;
+    border-radius: 8px;
+    margin-top: 29px;
+    margin-right: 18px;
+}
+
+.button .btn2 .input {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    outline: none;
+
+}
+
+input[type="button"] {
+    border: none;
+    position: absolute;
+    width: 115px;
+    height: 52px;
+    background: #B7BDC1;
+    border-radius: 8px;
+    margin-top: 29px;
+
+}
