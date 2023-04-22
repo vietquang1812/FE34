@@ -24,14 +24,14 @@ document.getElementById('app').innerHTML = fullname
 //     console.log(fullname)
 // }
 // alert('Hello World')
-var number = prompt('Please enter a Number: ',);
-number = parseInt(number)
-console.log(number)
-if(isNaN(number)) {
-    alert('this is not a number')
-} else {
-    alert(number)
-}
+// var number = prompt('Please enter a Number: ',);
+// number = parseInt(number)
+// console.log(number)
+// if(isNaN(number)) {
+//     alert('this is not a number')
+// } else {
+//     alert(number)
+// }
 
 // var isLarge = confirm('are u confirm it?')
 // console.log(isLarge)
@@ -42,3 +42,5 @@ if(isNaN(number)) {
 
 // document.getElementById('app').innerHTML = student.fullname
 // document.getElementById('app').innerHTML = student['fullname']
+// const a = {};
+// a.fullname = 'N V A';
