@@ -269,9 +269,9 @@ let UCLN = function () {
 let starTriangle = function () {
     let a = prompt('enter number tri-angle')
     if (!isNaN(a) && a != "") {
-       
+
         for (let i = 1; i <= a; i++) {
-           
+
             for (let j = 1; j <= i; j++) {
                 document.getElementById('10').innerHTML += "A"
             }
@@ -279,7 +279,8 @@ let starTriangle = function () {
         }
     } else { alert('error') }
 }
-starTriangle()
+// starTriangle()
+// *******************//
 let BCNN = function () {
     let a = prompt('Enter number 1')
     let b = prompt('Enter number 2')
@@ -287,7 +288,7 @@ let BCNN = function () {
     let number = ''
     a = Math.abs(parseInt(a))
     b = Math.abs(parseInt(b))
-    c = Math.abs(parseInt(c))
+    c = a * b
     if (!isNaN(a) && !isNaN(b) && a != "" & b != "") {
         if (a == b) {
             return a
@@ -299,17 +300,26 @@ let BCNN = function () {
                 } else { return b }
             }
             else if (a > b) {
-                if (a % 2 != 0 && b % 2 != 0) {
-                    return a * b
-                } else { return a * b / (a % b) }
+                for (let i = a; i <= c; i++) {
+                    if (i % a == 0 && i % b == 0) {
+                        return i;
+                        break;
+                    }
+                    
+                }
 
             } else {
-                if (a % 2 != 0 && b % 2 != 0) {
-                    return a * b
-                } else { return a * b / (b % a) }
+                if (a < b)
+                    for (let i = b; i <= c; i++) {
+                        if (i % a == 0 && i % b == 0) {
+                            return i;
+                            break;
+                    }
+                        }
+                        
             }
         }
     } else { alert('not a number') }
 }
-// let xyz = BCNN()
-// document.getElementById('11').innerHTML = xyz
+let xyz = BCNN()
+document.getElementById('11').innerHTML = xyz
