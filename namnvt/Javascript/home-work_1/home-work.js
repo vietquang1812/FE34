@@ -239,25 +239,19 @@ let UCLN = function () {
     b = Math.abs(parseInt(b))
     let c = ''
     c = parseInt(c)
+    let maxab = Math.max(a, b)
+    let minab = Math.min(a, b)
     if (!isNaN(a) && !isNaN(b) && a != "" & b != "") {
         if (a == b) {
             return a
-        } else if (a * b != 0 && a > b) {
+        } else if (a * b != 0) {
             do {
-                c = b
-                b = a % b
-                a = c
-            } while (b != 0)
-            console.log(c)
-            return a
+                c = minab
+                minab = maxab % minab
+                maxab = c
+            } while (minab != 0)
 
-        } else if (a * b != 0 && a < b) {
-            do {
-                c = a
-                a = b % a
-                b = c
-            } while (a != 0)
-            return b
+            return maxab
         }
     } else { alert('Error not a number') }
 }
@@ -289,34 +283,33 @@ let BCNN = function () {
     a = Math.abs(parseInt(a))
     b = Math.abs(parseInt(b))
     c = a * b
+    let maxab = Math.max(a, b)
+    let minab = Math.min(a, b)
     if (!isNaN(a) && !isNaN(b) && a != "" & b != "") {
         if (a == b) {
             return a
         } else {
             if (a % b == 0 || b % a == 0) {
-
-                if (a > b) {
-                    return a
-                } else { return b }
+                return maxab
             }
-            else if (a > b) {
-                for (let i = a; i <= c; i++) {
+            else {
+                for (let i = maxab; i <= c; i++) {
                     if (i % a == 0 && i % b == 0) {
                         return i;
                         break;
                     }
-                    
+
                 }
 
-            } else {
-                if (a < b)
-                    for (let i = b; i <= c; i++) {
-                        if (i % a == 0 && i % b == 0) {
-                            return i;
-                            break;
-                    }
-                        }
-                        
+                // } else {
+                //     if (a < b)
+                //         for (let i = b; i <= c; i++) {
+                //             if (i % a == 0 && i % b == 0) {
+                //                 return i;
+                //                 break;
+                //             }
+                //         }
+
             }
         }
     } else { alert('not a number') }
