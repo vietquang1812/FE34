@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter8 | Responsive Web Design</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="logo">
+            <img src="images/logo.png" alt="FE34">
+        </a>
+        <a href="javascript:void(0)" id="icon-toggle-nav" class="icon-toggle-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <nav>
+
+            <ul class="menu">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li><a href="#teams">Teams</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside>Aside</aside>
+        <section>Section</section>
+    </main>
+    <footer>Footer</footer>
+
+    <script type="text/javascript">
+        document.getElementById('icon-toggle-nav').onclick = function () {
+            if (this.classList.contains('active')) {
+                this.classList.remove('active')
+            } else {
+                this.classList.add('active')
+            }
+        }
+    </script>
+</body>
+
+</html>

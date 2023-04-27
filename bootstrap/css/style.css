@@ -1,0 +1,27 @@
+[data-bs-theme=light] {
+    --bs-danger: #08e650;
+    --bs-danger-rgb: 8, 230, 80;
+    --bs-primary: #6F42DC;
+    --bs-primary-rgb: 111, 66, 220;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.fixed-sm {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.logo {
+    width: 100px;
+    height: auto;
+}
+@media screen and (min-width: 576px) {
+    .fixed-sm {
+        position: static;
+    }
+}

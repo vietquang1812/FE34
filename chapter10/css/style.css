@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+.grid {
+    display: grid;
+    /* grid-template-rows: 200px 200px 200px; */
+    /* grid-gap: 20px; */
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+
+    grid-template-areas: 
+    "head head head"
+    "aside section-1 section-1"
+    "aside section-2 section-3"
+    "foot foot foot"
+    ;
+}
+.grid div, .grid header, .grid footer, .grid section, .grid aside {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    border: 2px solid #fff;
+    background-color: blue;
+}
+.grid-child-1 {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+}
+.grid-child-2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+.grid-child-5 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+}
+/* 
+header {
+    grid-row: header-row-start/ header-row-end;
+    grid-column: header-start/header-end;
+}
+aside {
+    grid-row: aside-row-start/ aside-row-end;
+    grid-column:aside-start/ aside-end;
+}
+.section-1 {
+    grid-column: section-start/section-end;
+    grid-row: section-1-row-start/ section-1-row-end;
+}
+.section-2 {
+    grid-column: section-start/section-end;
+    grid-row: section-2-row-start/section-2-row-end;
+}
+footer {
+    grid-column: footer-start/footer-end;
+    grid-row: footer-row-start/footer-row-end;
+} */
+header {
+    grid-area: head;
+}
+aside {
+    grid-area: aside;
+}
+.section-1 {
+    grid-area: section-1;
+}
+.section-2 {
+    grid-area: section-2;
+}
+.section-3 {
+    grid-area: section-3;
+}
+footer {
+    grid-area: foot;
+}

@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+.vh {
+    height: 100vh;
+}
+textarea {
+    width: 100%;
+}
+.form {
+    display: block;
+    max-width: 600px;
+    border: 1px solid #333;
+    padding: 20px 50px;
+    border-radius: 20px;
+    margin: 10% auto 0;
+    box-shadow: 4px 4px 4px rgba(0, 0,0, .4);
+}
+.form_item {
+    display: grid;
+    grid-template-columns: 200px 1fr ;
+    margin-bottom: 10px;
+    grid-gap: 10px;
+}
+.form_item_label {
+    text-align: right;
+    font-weight: 700;
+    color: rgba(0, 0, 255, 0.838);
+    font-size: 16px;
+}
+.form_item_input {
+    padding: 5px 20px;
+    border-radius: 5px;
+    border-color: #555;
+    border-width: 1px;
+}
+.form_item-btns {
+    text-align: center;
+}
+.btn {
+    padding: 5px 20px;
+    margin: 0 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0,0, .24);
+    border-radius: 8px;
+    color: #fff;
+    border-width: 1px;
+}
+.btn-submit {
+    border-color: rgb(241, 179, 86);
+    background-color: rgb(241, 179, 86);
+}
+.btn-reset {
+    background-color: #838282;
+}
+
+.form-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-flex .form_item_label {
+    display: block;
+    width: 200px;
+    padding-right: 10px;
+}
+.form-flex .form_item_input {
+    width: calc(100% - 200px);
+}
+.form-flex .form_item_input, .form-flex .form_item_label {
+    margin-bottom: 10px;
+}
+.btns {
+    width: 100%;
+    text-align: center;
+    margin-left: 200px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 10px;
+}
+.text-center {
+    text-align: center;
+}
+[required] {
+    border-color: rgb(6, 156, 179);
+}
+.form_item_input:invalid {
+    border-color: red;
+    border-width: 2px;
+}
+.form_item_input:valid {
+    border-color: green;
+    border-width: 2px;
+}
