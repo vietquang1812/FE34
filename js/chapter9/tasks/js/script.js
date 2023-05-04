@@ -68,7 +68,7 @@ const showTasks = (list = tasks) => {
 
 $('search').onkeyup = function() {
     const search = this.value
-    const list = tasks.filter(item => item.description.indexOf(search) >=0)
+    const list = tasks.filter(item => item.description.toLowerCase().indexOf(search.toLowerCase()) >=0)
     showTasks(list)
 }
 
