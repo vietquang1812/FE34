@@ -31,6 +31,7 @@ const addTask = () => {
     const status = $('status').checked
 
     tasks.push({
+        id: tasks.length + 1,
         description,
         deadline,
         status
@@ -55,8 +56,8 @@ const $td = text => {
 const showTasks = (list = tasks) => {
     $('tasks').innerHTML = list.length === 0 ? '<tr><td colspan="4" class="text-center">No Items</td></tr>' :''
 
-    list.forEach((task, index) => {
-        const $no = $td(index + 1)
+    list.forEach((task) => {
+        const $no = $td(task.id)
         const $des = $td(task.description)
         const $deadline = $td(task.deadline)
         const $status = $td(task.status ? 'Complete' : 'Uncomplete')
@@ -71,7 +72,19 @@ $('search').onkeyup = function() {
     const list = tasks.filter(item => item.description.toLowerCase().indexOf(search.toLowerCase()) >=0)
     showTasks(list)
 }
+$('filter').onclick = function() {
+    const list = tasks.filter(item => !item.status)
+    showTasks(list)
+}
+$('late').onclick = function() {
+    const list = tasks.filter(item => {
+        const today = (new Date()).getTime()
+        const taskDate = (new Date(item.deadline)).getTime() + 24*60*60*1000 - 1
+        return !item.status && today > taskDate
 
+    })
+    showTasks(list)
+}
 $('submit').onclick = function() {
     if(checkValidate()) {
         addTask()
