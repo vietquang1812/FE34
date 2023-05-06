@@ -72,6 +72,28 @@ $('search').onkeyup = function() {
     const list = tasks.filter(item => item.description.toLowerCase().indexOf(search.toLowerCase()) >=0)
     showTasks(list)
 }
+
+$('sort_deadline').onclick = function() {
+    const isSortInc = this.getAttribute('data-inc')
+    if(isSortInc == 0) {
+        const list = tasks.sort((a,b) => {
+            const dateA = new Date(a.deadline)
+            const dateB = new Date(b.deadline)
+            return dateA.getTime() - dateB.getTime()
+        })
+        showTasks(list)
+        this.setAttribute('data-inc', 1)
+    } else {
+        const list = tasks.sort((a,b) => {
+            const dateA = new Date(a.deadline)
+            const dateB = new Date(b.deadline)
+            return dateB.getTime() - dateA.getTime()
+        })
+        showTasks(list)
+        this.setAttribute('data-inc', 0)
+    }
+}
+
 $('filter').onclick = function() {
     const list = tasks.filter(item => !item.status)
     showTasks(list)

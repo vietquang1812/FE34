@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="h2">Form</h2>
+                    </div>
+                    <div class="card-body">
+                        <label>
+                            <h6 class="h6">Full Name</h6>
+                            <input type="text" id="fullname" name="fullname" class="form-control mt-2">
+                            <p class="text-danger"></p>
+                        </label>
+                        <label>
+                            <h6 class="h6">HTML</h6>
+
+                            <input type="number" class="form-control" id="html" name="html" placeholder="HTML">
+                            <p class="text-danger"></p>
+                        </label>
+                        <label>
+                            <h6 class="h6">Javascript</h6>
+
+                            <input type="number" class="form-control" id="javascript" name="javascript">
+                            <p class="text-danger"></p>
+                        </label>
+                        <label>
+                            <h6 class="h6">ReactJs</h6>
+
+                            <input type="number" class="form-control" id="reactjs" name="reactjs">
+                            <p class="text-danger"></p>
+                        </label>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" type="button" id="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between"><h2 class="h2">Students</h2>
+                        <!-- <input type="text" id="search" placeholder="Search" class="form-control m-w-200"> -->
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>HTML</th>
+                                    <th>JS</th>
+                                    <th>ReactJs</th>
+                                    <th>AVG</th>
+                                    <th>Rank</th>
+                                </tr>
+                            </thead>
+                            <tbody id="app">
+                                <tr><td colspan="7" class="text-center">No Items</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/student.js"></script>
+</body>
+</html>
