@@ -2,6 +2,7 @@
 const $ = (id) => { return document.getElementById(id) }
 const $btninbound = $('inbound')
 const $btnoutbound = $('outbound')
+
 $btninbound.action = 'add'
 const $code = $('code')
 const $name = $('name')
@@ -14,7 +15,7 @@ class Material {
     constructor(code, name, qty, ob) {
         this.code = code;
         this.name = name;
-        this.qty = qty
+        this.qty = parseInt(qty)
         this.outbound = ob
 
     }
@@ -50,7 +51,7 @@ class Material {
                 $btninbound.EditIndex = index
                 $btninbound.action = 'Edit'
                 $btninbound.textContent = 'Update'
-
+                $btnoutbound.style.visibility = 'hidden'
                 const isCancel = document.getElementById('cancel')
                 if (isCancel == null) {
                     const $cancel = document.createElement('button')
@@ -63,29 +64,30 @@ class Material {
                         $code.value = ""
                         $name.value = ""
                         $qty.value = ""
+                        $btninbound.textContent='Inbound'
+                        $btnoutbound.style.visibility = 'visible'
                         $cancel.remove()
                     }
-
                 }
-
             }
             return $edit
         }
+        const action = $td()
         $row.appendChild($td(index + 1))
         $row.appendChild($td(this.code))
         $row.appendChild($td(this.name))
         $row.appendChild($td(this.qty))
         $row.appendChild($td(this.outbound))
-        $row.appendChild(btndelete(index))
-        $row.appendChild(btnedit(index))
-
+        action.appendChild(btnedit(index))
+        action.appendChild(btndelete(index))
+        $row.appendChild(action)
         return $row
     }
 
 }
 
 const showInbound = (list = stores) => {
-    app.innerHTML = list.lenght === 0 ? ` <tr><td colspan="6" class="text-center">No Items</td></tr>` : ""
+    app.innerHTML = list.length === 0 ? ` <tr><td colspan="6" class="text-center">No Items</td></tr>` : ""
 
     list.forEach((eq, index) => {
         const $rows = eq.InitRow(index)
@@ -93,28 +95,39 @@ const showInbound = (list = stores) => {
     })
 }
 const addMaterial = function () {
-    const eq = new Material($code.value, $name.value, $qty.value)
+    const eq = new Material($code.value, $name.value, $qty.value, 0)
     if (stores.length == 0) {
 
         stores.push(eq)
     } else {
         const index = stores.findIndex($e => $e.code == $code.value)
         if (index >= 0) {
+            if(stores[index].name == $name.value){
 
             stores[index].qty = parseInt(stores[index].qty) + parseInt($qty.value)
+            }else{alert('materials name not same exit name')}
         } else stores.push(eq)
     }
     localStorage.setItem(stores, JSON.stringify('stores'))
 }
 const outbound = () => {
     const index = stores.findIndex($e => $e.code == $code.value)
+   
     const oldQty = stores[index].qty
-    if (index >= 0 && oldQty > 0 && $qty.value <= oldQty) {
+    
+        if (oldQty == 0) {
+            alert('Empty in stock')
+        }
+        else if (index >= 0 && oldQty > 0 && $qty.value <= oldQty) {
 
-        stores[index].outbound = parseInt($qty.value)
-        stores[index].qty = oldQty - parseInt(stores[index].outbound)
-    }
+            let currentob = parseInt(stores[index].outbound)
+
+            stores[index].outbound = currentob + parseInt($qty.value)
+
+            stores[index].qty = oldQty - parseInt($qty.value)
+        } else { alert('Outbound quantity not correct') }
 }
+
 
 const checkValidate = () => {
     let isValid = true
@@ -141,6 +154,7 @@ const checkValidate = () => {
     }
     const Mqty = $qty.value
     if (!isNaN(Mqty) && Mqty != "" && Mqty > 0) {
+
         $qty.nextElementSibling.textContent = ""
 
     } else {
@@ -154,6 +168,7 @@ $btninbound.onclick = function () {
         if ($btninbound.action == 'add') {
             addMaterial()
         } else {
+            $btnoutbound.style.visibility = 'visible'
             const index = $btninbound.EditIndex
             if (!isNaN(index) && index >= 0 && index < stores.length) {
                 stores[index].code = $code.value
@@ -177,17 +192,17 @@ $btninbound.onclick = function () {
 }
 
 $btnoutbound.onclick = () => {
-if(checkValidate()){
-    outbound()
-    showInbound()
-}
+    if (checkValidate()) {
+        outbound()
+        showInbound()
+    }
 }
 
 
 const localData = JSON.parse(localStorage.getItem('stores')) || []
 localData.forEach(ls => {
     if (localStorage.length > 0) {
-        const wh = new Material(ls.code, ls.name, ls.qty)
+        const wh = new Material(ls.code, ls.name, ls.qty, ls.outbound)
         stores.push(wh)
     }
 })
