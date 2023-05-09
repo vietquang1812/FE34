@@ -15,7 +15,7 @@ class Material {
     constructor(code, name, qty, ob) {
         this.code = code;
         this.name = name;
-        this.qty = parseInt(qty)
+        this.qty = qty
         this.outbound = ob
 
     }
@@ -64,7 +64,7 @@ class Material {
                         $code.value = ""
                         $name.value = ""
                         $qty.value = ""
-                        $btninbound.textContent='Inbound'
+                        $btninbound.textContent = 'Inbound'
                         $btnoutbound.style.visibility = 'visible'
                         $cancel.remove()
                     }
@@ -102,30 +102,30 @@ const addMaterial = function () {
     } else {
         const index = stores.findIndex($e => $e.code == $code.value)
         if (index >= 0) {
-            if(stores[index].name == $name.value){
+            if (stores[index].name == $name.value) {
 
-            stores[index].qty = parseInt(stores[index].qty) + parseInt($qty.value)
-            }else{alert('materials name not same exit name')}
+                stores[index].qty = parseInt(stores[index].qty) + parseInt($qty.value)
+            } else { alert('materials name not same exit name') }
         } else stores.push(eq)
     }
     localStorage.setItem(stores, JSON.stringify('stores'))
 }
 const outbound = () => {
     const index = stores.findIndex($e => $e.code == $code.value)
-   
-    const oldQty = stores[index].qty
-    
-        if (oldQty == 0) {
-            alert('Empty in stock')
-        }
-        else if (index >= 0 && oldQty > 0 && $qty.value <= oldQty) {
 
+    const oldQty = parseFloat(stores[index].qty)
+
+    if (oldQty == 0) {
+        alert('Empty in stock')
+    }
+    else if (index >= 0) {
+        if (parseFloat($qty.value) > oldQty) { alert('Outbound Qty over stock') }
+        else {
             let currentob = parseInt(stores[index].outbound)
-
             stores[index].outbound = currentob + parseInt($qty.value)
-
             stores[index].qty = oldQty - parseInt($qty.value)
-        } else { alert('Outbound quantity not correct') }
+        }
+    } else { alert('Outbound quantity not correct') }
 }
 
 
@@ -152,11 +152,11 @@ const checkValidate = () => {
         isValid = false
         $name.nextElementSibling.textContent = "Error"
     }
-    const Mqty = $qty.value
-    if (!isNaN(Mqty) && Mqty != "" && Mqty > 0) {
+    const Mqty =parseFloat($qty.value)
+
+    if (!isNaN(Mqty) && Mqty != "" && Mqty > 0&&Mqty%1==0) {
 
         $qty.nextElementSibling.textContent = ""
-
     } else {
         isValid = false
         $qty.nextElementSibling.textContent = "Error"
