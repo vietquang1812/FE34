@@ -16,7 +16,7 @@ class Bill {
         this.items.forEach(item => {
             const product = products.find(p => item.product_id === p.id)
             if(product != null) {
-                sum += item.quantity * p.price
+                sum += item.quantity * product.price
             }
         })
 
@@ -65,11 +65,11 @@ class Bill {
         const $id = $td(this.id)
         const $products = $td(tableProduct())
         const $amount = $td(this.amount(products))
-        const $created = $td(this.created_at.toString())
+        // const $created = $td(this.created_at.toString())
         $row.appendChild($id)
         $row.appendChild($products)
         $row.appendChild($amount)
-        $row.appendChild($created)
+        // $row.appendChild($created)
         return $row
     }
     

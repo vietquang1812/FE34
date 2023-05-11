@@ -12,13 +12,13 @@
     <div class="container mt-2">
         <div class="row">
             <div class="col-4">
-                <form action="" id="form-bill">
+                <form action="" id="form_bill">
                     <div class="card">
                         <div class="card-header"><h4 class="h4">Form Bill</h4></div>
                         <div class="card-body">
                             <label class="d-block">
                                 <h6 class="h6">Bill</h6>
-                                <select name="" id="bill" class="form-control">
+                                <select name="" id="bill_id" class="form-control">
                                     <option value="" >new Bill</option>
                                 </select>
                             </label>
@@ -29,6 +29,7 @@
                             <label class="d-block mt-2">
                                 <h6 class="h6">Quantity</h6>
                                 <input type="number" class="form-control" id="quantity">
+                                <p class="text-danger"></p>
                             </label>
                         </div>
                         <div class="card-footer">
@@ -49,9 +50,10 @@
                                     <th>ID</th>
                                     <th>Items</th>
                                     <th>Amount</th>
-                                    <th>Created_at</th>
+                                    <!-- <th>Created_at</th> -->
                                 </tr>
                             </thead>
+                            <tbody id="bills"></tbody>
                         </table>
                     </div>
                 </div>
