@@ -8,38 +8,43 @@ const $ = id => (document.getElementById(id))
 //         return this.firstName +' '+ this.lastName
 //     }
 // }
-// class Person {
-//     constructor(firstName, lastName, passport, gender) {
-//         this.firstName = firstName;
-//         this.lastName = lastName;
-//         this.passport = passport;
-//         this.gender = gender;
-//     }
-//     fullName() {
-//         return this.firstName + ' ' + this.lastName;
-//     }
-//     toString() {
-//         return this.fullName();
-//     }
-// }
+class Person {
+    constructor(firstName, lastName, passport, gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passport = passport;
+        this.gender = gender;
+    }
+    fullName() {
+        return this.firstName + ' ' + this.lastName;
+    }
+    toString() {
+        return this.fullName();
+    }
+}
 
+class ReactJs extends Person {
+    constructor(firstName, lastName, passport, gender, html, js, reactjs, project) {
+        super(firstName, lastName, passport, gender)
+        this.html = html;
+        this.js = js;
+        this.reactjs = reactjs;
+        this.project = project;
+    }
+    fullName() {
+        const fullname = super.fullName()
+        return 'child function '+fullname
+    }
+    avg() {
+        return ((this.html + this.js + this.reactjs + this.project) / 4).toFixed(1);
+    }
+    avg(plus) {
+        return ((this.html + this.js + this.reactjs + this.project) / 4 + plus).toFixed(1);
+    }
 
-
-// class ReactJs extends Person {
-//     constructor(firstName, lastName, passport, gender, html, js, reactjs, project) {
-//         super(firstName, lastName, passport, gender)
-//         this.html = html;
-//         this.js = js;
-//         this.reactjs = reactjs;
-//         this.project = project;
-//     }
-
-//     avg() {
-//         return ((this.html + this.js + this.reactjs + this.project) / 4).toFixed(1);
-//     }
-
-// }
-
+}
+const react = new ReactJs('Nguyen Van', 'A', '1234567', true,7,7,8,9)
+alert(react.avg(1))
 
 // class PHP extends Person {
 //     constructor(firstName, lastName, passport, gender, html, php, laravel, project) {
