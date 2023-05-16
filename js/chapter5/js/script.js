@@ -80,20 +80,54 @@ const $ = (id) => (document.getElementById(id))
    
 const $name = $('fullname')
 const $salary = $('salary')
+const $btn_submit = $('submit')
+
 const $app = $('app')
 const employees = []
 const showEmloyees = () => {
     $app.innerHTML = ''
     employees.forEach((emp, index) => {
-      $app.innerHTML += `
-        <tr>
-            <td>${index + 1}</td>
-            <td>${emp.fullName}</td>
-            <td>${parseFloat(emp.salary).toFixed(1)}</td>
-            <td>${emp.tax().toFixed(1)}</td>
-            <td>${emp.total().toFixed(1)}</td>
-        </tr>
-      `
+    $app.innerHTML += `
+    <tr>
+        <td>${index + 1}</td>
+        <td>${emp.fullName}</td>
+        <td>${parseFloat(emp.salary).toFixed(1)}</td>
+        <td>${emp.tax().toFixed(1)}</td>
+        <td>${emp.total().toFixed(1)}</td>
+        <td>
+            <button class="js-del" data-index="${index}">Delete</button> 
+            <button class="js-edit" data-index="${index}">Edit</button>
+        </td>
+    </tr>
+    `
+    const del=document.getElementsByClassName('js-del');
+    for (let i=0;i<del.length;i++){
+        del[i].onclick = function(){
+            const index_del = this.getAttribute('data-index');
+            
+            if (!isNaN(index_del) && index_del >=0 && index_del<del.length)
+            { 
+                employees.splice(index_del,1);
+            }
+            showEmloyees();
+        }
+    }
+    const edit=document.getElementsByClassName('js-edit');
+    for (let i=0;i<edit.length;i++){
+        edit[i].onclick = function(){
+            const index_edit = this.getAttribute('data-index');
+            if (!isNaN(index_edit) && index_edit >=0 && index_edit<del.length)
+            { 
+                $name.value = employees[index_edit].fullName;
+                $salary.value = employees[index_edit].salary;
+                $btn_submit.innerHTML = 'Update';
+                $btn_submit.setAttribute('data-event','update');
+                $btn_submit.setAttribute('data-index',index_edit);
+            }
+            showEmloyees();
+        }
+    }
+    
     })
 }
 $('form').onsubmit = function(e) {
@@ -116,20 +150,31 @@ $('form').onsubmit = function(e) {
         isValid = false
     }
     if(!isValid) return;
-    employees.push({
-        fullName: fullName,
-        salary: salary,
-        tax: function() {
-            const s = parseFloat(this.salary)
-            if(s > 500) {
-                return (s-500)*.1
-            }
-            return 0
-        },
-        total: function() {
-            return this.salary - this.tax()
+    if ( $btn_submit.getAttribute('data-event')=== 'update'){
+        let btn_index =$btn_submit.getAttribute('data-index');
+        if (!isNaN(btn_index) && btn_index>=0 && btn_index <employees.length)
+        {
+            employees[btn_index].fullName = fullName;
+            employees[btn_index].salary = salary;
         }
-
-    })
+    } else {
+        employees.push({
+            fullName: fullName,
+            salary: salary,
+            tax: function() {
+                const s = parseFloat(this.salary)
+                if(s > 500) {
+                    return (s-500)*.1
+                }
+                return 0
+            },
+            total: function() {
+                return this.salary - this.tax()
+            }
+    
+        })
+    }
+    
     showEmloyees()
+    $('form').reset();
 }

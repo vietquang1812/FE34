@@ -29,8 +29,9 @@ const addTask = () => {
     const description = $('description').value
     const deadline = $('deadline').value
     const status = $('status').checked
-
+    const id =tasks.length;
     tasks.push({
+        id,
         description,
         deadline,
         status
@@ -77,6 +78,12 @@ $('submit').onclick = function() {
         addTask()
         showTasks()
     }
+}
+
+$('late').onclick = function() {
+    
+    const later_item = tasks.filter(item => ((new Date(item.deadline)) + 24*60*60 -1) < (new Date()).getTime() );
+    showTasks(later_item);
 }
 
 const getLocalData = () => {
