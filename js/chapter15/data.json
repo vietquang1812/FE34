@@ -1,0 +1,10 @@
+{
+    "first": "name",
+    "list": [
+        {
+            "fullname": "NVA",
+            "javascript": 10,
+            "pass": true
+        }
+    ]
+}
