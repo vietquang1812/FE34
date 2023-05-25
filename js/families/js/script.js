@@ -1,86 +1,43 @@
 'use strict';
-const $ = id => (document.getElementById(id))
-const common = {
-    $row: function($items) {
-        const $tr = document.createElement('tr')
-        $items.forEach($item => {
-            $tr.appendChild($item)
-        })
-        return $tr
-    },
-    $cell: function(content) {
-        const $td = document.createElement('td')
-        if(typeof content === 'object') {
-            $td.appendChild(content)
-        } else {
-            $td.textContent = content
-        }
-        return $td
-    },
-    $titles: function(heads) {
-        const $thead = document.createElement('thead')
-        const $ts = heads.map(h => this.$cell(h))
-        const $row = this.$row($ts)
-        $thead.appendChild($row)
-        return $thead
-    },
-    $list: function($thead, $rows) {
-        const $tb = document.createElement('table')
-        $tb.className = 'table table-striped'
-        const $tbody = document.createElement('tbody')
-        $rows.forEach($row => {
-            $tbody.appendChild($row)
-        })
-        $tb.appendChild($thead)
-        $tb.appendChild($tbody)
-        return $tb
-    }
-}
+import common from "./common.js";
+import Family from "./family.js";
+
 const managerApartment = {
     DOM : {
-        $room : $('room'),
-        $roomNumber: $('room_number'),
-        $fullname: $('fullname'),
-        $relationship: $('relationship'),
-        $bod: $('bod'),
-        $job: $('job'),
-        $form: $('form'),
-        $submit: $('submit'),
-        $app: $('app'),
+        $room : common.$('room'),
+        $roomNumber: common.$('room_number'),
+        $fullname: common.$('fullname'),
+        $relationship: common.$('relationship'),
+        $bod: common.$('bod'),
+        $job: common.$('job'),
+        $form: common.$('form'),
+        $submit: common.$('submit'),
+        $app: common.$('app'),
     },
     auto_increase_person_id: 0,
     auto_increase_family_id: 0,
     families: [],
-    Person: function(id, fullname, relationship, bod, job) {
-        this.id = id
-        this.fullname = fullname
-        this.relationship = relationship
-        this.bod = bod
-        this.job = job
-    },
     show: function(list = this.families) {
         this.DOM.$app.innerHTML = list.length === 0 ? '<td class="text-center" colspan="5">No Family</td>' : ''
         list.forEach(f => {
-            this.DOM.$app.appendChild(f.innitRow())
+            this.DOM.$app.appendChild(f.row(this.handles.edit.bind(this), this.handles.delete))
         });
-    },
-    Family: function(id, room, persons=[]) {
-        this.id = id
-        this.room_number = room
-        this.persons = [...persons]
     },
     storage: function() {
         const load = () => {
             const fms = JSON.parse(localStorage.getItem('families')) || []
             this.families = fms.map(f => {
                 this.auto_increase_person_id = Math.max(...f.persons.map(p => p.id), this.auto_increase_person_id)
-                const persons = f.persons.map(p => new this.Person(p.id, p.fullname, p.relationship, p.bod, p.job))
-                return new this.Family(f.id, f.room_number, persons)
+                
+                return new Family(f.id, f.room_number, f.persons)
             })
             this.auto_increase_family_id = Math.max(...fms.map(f=>f.id), this.auto_increase_family_id)
+            this.show()
+            this.events().selectId('')
         }
         const save = () => {
             localStorage.setItem('families', JSON.stringify(this.families))
+            this.show()
         }
 
         return {load, save}
@@ -90,54 +47,116 @@ const managerApartment = {
 
         return isValid
     },
+    handles: {
+        edit: function(id, isPerson = false)  {
+            this.DOM.$form.id = id
+            this.DOM.$form.isPerson = isPerson
+            this.DOM.$form.edit = true
+            let family, person
+            if(isPerson) {
+                family = this.families.find(f => f.persons.findIndex(p => p.id === id) >=0)
+                person = family.persons.find(p => p.id === id)
+            } else {
+                family = this.families.find(f => f.id === id)
+                person = family.persons[0]
+            }
+
+            this.DOM.$room.value = family.id
+            // this.DOM.$room.setAttribute('readonly', true)
+            this.DOM.$roomNumber.value = family.room_number
+            this.DOM.$fullname.value = person.fullname
+            this.DOM.$relationship.value = person.relationship
+            this.DOM.$bod.value = person.bod
+            this.DOM.$job.value = person.job
+            if(isPerson) {
+                this.DOM.$room.setAttribute('disabled', true)
+                this.DOM.$roomNumber.style.display = 'none'
+            }
+
+        },
+        delete: function(id, isPerson = false) {
+
+        }, 
+        reset: function() {
+            this.DOM.$form.reset()
+            this.DOM.$room.removeAttribute('disabled')
+        }
+    },
     events: function() {
+        const selectId = id => {
+            let html = '<option value="">New</option>'
+            this.families.forEach(f=> {
+                html += `<option value="${f.id}">${f.room_number}</option>`
+            })
+            this.DOM.$room.innerHTML = html
+            this.DOM.$room.value = id
+
+        }
         const submit = () =>{
             if(this.validate()) {
                 const id = this.DOM.$room.value
                 const room = this.DOM.$roomNumber.value
-                if(id == '') {
-                    this.families.push(new this.Family(++this.auto_increase_family_id, room, ))
+                const fullname = this.DOM.$fullname.value
+                const relationship = this.DOM.$relationship.value
+                const bod = this.DOM.$bod.value
+                const job = this.DOM.$job.value
+                if(this.DOM.$form.edit) {
+                    const family = this.families.find(f=> f.id === parseInt(id))
+                    if(this.DOM.$form.isPerson) {
+                        family.update_person(id, fullname,relationship, bod, job)
+                    }
+                } else {
+                    
+                    if(id == '') {
+                        const family = new Family(++this.auto_increase_family_id, room, [])
+                        family.add_person(++this.auto_increase_person_id, fullname, relationship, bod, job)
+                        this.families.push(family)
+                        selectId(family.id)
+                    } else {
+                        const family = this.families.find(f=> f.id === parseInt(id))
+                        family.add_person(++this.auto_increase_person_id, fullname, relationship, bod, job)
+                    }
+
                 }
+                this.handles.reset.call(this)
+
+                this.storage().save()
             }
         }
 
-        return {submit}
+        const changeId = () => {
+            const val = this.DOM.$room.value
+            if(val === '') {
+                this.DOM.$roomNumber.style.display = 'block'
+            } else {
+                this.DOM.$roomNumber.style.display = 'none'
+            }
+        }
+
+        return {submit, changeId, selectId}
     },
     init: function() {
         this.storage().load()
-        this.show()
-        this.events().submit()
+        this.DOM.$form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            this.events().submit()
+        } )
+
+        this.DOM.$room.addEventListener('change', this.events().changeId)
+
+
     }
 }
 
-managerApartment.Person.prototype.row = function() {
-    const $id = common.$cell(this.id)
-    const $fullname = common.$cell(this.full$fullname)
-    const $relationship = common.$cell(this.re$relationship)
-    const $bod = common.$cell(this.bod)
-    const $job = common.$cell(this.job)
-
-    const $row = common.$row([$id, $fullname, $relationship, $bod, $job])
-    return $row
-}
-managerApartment.Family.prototype.row = function() {
-    const $id = common.$cell(this.id)
-    const $room = common.$cell(this.room_number)
-    const $length = common.$cell(this.persons.length)
-    const $theads = common.$titles(['ID', 'Name', 'Rel', 'BoD', 'Job', 'Action'])
-    const $persons = this.persons.map(p => p.row())
-    const $details = common.$cell(common.$list($theads, $persons))
-
-    return common.$row([$id, $room, $length, $details])
-}
 managerApartment.init()
 
-// var xhttp = new XMLHttpRequest();
-// xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//        // Typical action to be performed when the document is ready:
-//        document.getElementById("demo").innerHTML = xhttp.responseText;
-//     }
-// };
-// xhttp.open("GET", "filename", true);
-// xhttp.send();
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       console.log(JSON.parse(xhttp.responseText))
+    //    document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+};
+xhttp.open("GET", "https://dummyjson.com/products", true);
+xhttp.send();
